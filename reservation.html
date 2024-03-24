@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Reservation System</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
+
+.header {
+    background-color: #f57c00;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #f57c00;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.menu {
+    margin-top: 20px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.menu-item img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.menu-item-info {
+    flex: 1;
+}
+
+.footer {
+    background-color: #f57c00;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Noubs Kitchen</h1>
+    <p>Make a Reservation</p>
+</div>
+
+<div class="container">
+    <h2>Reservation Form</h2>
+    <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date">
+    </div>
+    <div class="form-group">
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time">
+    </div>
+    <div class="form-group">
+        <label for="guests">Number of Guests:</label>
+        <input type="number" id="guests" name="guests" min="1">
+    </div>
+    <div class="form-group">
+        <label for="table-type">Table Type:</label>
+        <select id="table-type" name="table-type">
+            <option value="indoor">Indoor</option>
+            <option value="outdoor">Outdoor</option>
+            <option value="private-room">Private Room</option>
+        </select>
+    </div>
+    <button type="submit">Submit Reservation</button>
+</div>
+
+<div class="menu">
+    <div class="container">
+        <h2>Menu</h2>
+        <div class="menu-item">
+            <img src="./images/fish.png" alt="Dish 1">
+            <div class="menu-item-info">
+                <h3>Grilled Fish</h3>
+                <p>Grilled Oily Maquiro. Price: </p>CFA4500
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="./images/rice.png" alt="Dish 2">
+            <div class="menu-item-info">
+                <h3>Fried Rice</h3>
+                <p>Delicious quantitative/qualitative fride rice. Price: CFA3000</p>
+            </div>
+        </div>
+		<div class="menu-item">
+            <img src="./images/plantain.png" alt="Dish 2">
+            <div class="menu-item-info">
+                <h3>Fried Dodo</h3>
+                <p>Fabulous tasty dodo. Price: CFA2000</p>
+            </div>    </div>
+</div>
+
+<div class="footer">
+    <p>Contact Us: 123-456-7890 | noubisi@gmail.com</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Today's Menu</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.menu-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.menu-item h3 {
+    margin: 0;
+}
+
+.menu-item p {
+    margin: 5px 0;
+}
+
+.order-button {
+    background-color: #f57c00;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.footer {
+    background-color: #f57c00;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Noubs Kitchen</h1>
+    <h2>Today's Menu</h2>
+    <div id="menu"></div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 Noubs Kitchen. All rights reserved.</p>
+</div>
+
+<script>
+// Sample menu data for demonstration
+const menuData = {
+    "2024-03-21": [
+        { name: "Dish 1", description: "Fried dodo and beans", price: 2500, image: "dish1.jpg" },
+        { name: "Dish 2", description: "Achu", price: 2000, image: "dish2.jpg" },
+        { name: "Dish 3", description: "Fufu and Khatikhati", price: 2000, image: "dish3.jpg" }
+    ],
+    "2024-03-22": [
+        { name: "Special Dish", description: "Description of Special Dish", price: 15.99, image: "special.jpg" }
+    ]
+};
+
+// Function to display the menu for the current day
+function displayMenu() {
+    const currentDate = new Date().toISOString().split("T")[0]; // Get current date in YYYY-MM-DD format
+    const menu = menuData[currentDate];
+
+    if (!menu) {
+        document.getElementById("menu").innerHTML = "<p>No menu available for today.</p>";
+        return;
+    }
+
+    let menuHTML = "";
+    menu.forEach(item => {
+        menuHTML += `
+            <div class="menu-item">
+                <img src="${item.image}" alt="${item.name}">
+                <div>
+                    <h3>${item.name}</h3>
+                    <p>${item.description}</p>
+                    <p>Price: CFA${item.price.toFixed(2)}</p>
+                    <button class="order-button" onclick="order('${item.name}')">Order</button>
+                </div>
+            </div>
+        `;
+    });
+
+    document.getElementById("menu").innerHTML = menuHTML;
+}
+
+// Function to simulate ordering (replace with actual order functionality)
+function order(itemName) {
+    alert(`Ordered: ${itemName}`);
+}
+
+// Call the function to display the menu
+displayMenu();
+</script>
+
+</body>
+</html>
